@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from "./components/common/Header";
-import LandingPage from  "./components/common/LoadingSpinner"; // Fixed import path
-import Login from "./components/auth/LoginForm";
-import Register from './components/auth/RegisterForm';
+import LandingPage from "./components/common/LandingPage";
+import AuthPage from "./components/auth/AuthPage" // NEW: Import the unified auth page
 import Dashboard from "./pages/DashboardPage";
-import { ActivityForm } from "./activities/ActivityForm";
+import { ActivityForm } from "./activities/ActivityForm";// Changed from named to default import
 import ActivitiesList from "./activities/ActivityList";
-import Summary from "./components/summary/Summary"; // Added missing import
+import Summary from "./components/summary/Summary";
 import Achievements from "./pages/AchievementsPage";
+import GoogleCallback from "./components/auth/GoogleCallback";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -69,34 +69,38 @@ function App() {
             path="/" 
             element={isAuthenticated ? <Dashboard user={user} /> : <LandingPage />} 
           />
+          {/* NEW: Unified auth page route */}
           <Route 
-            path="/login" 
-            element={isAuthenticated ? <Navigate to="/" /> : <Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} 
+            path="/auth" 
+            element={isAuthenticated ? <Navigate to="/" /> : <AuthPage setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} 
           />
-          <Route 
-            path="/register" 
-            element={isAuthenticated ? <Navigate to="/" /> : <Register />} 
-          />
+          {/* REMOVED: Separate login and register routes */}
+          {/* <Route path="/login" element={...} /> */}
+          {/* <Route path="/register" element={...} /> */}
           <Route 
             path="/activities" 
-            element={isAuthenticated ? <ActivitiesList user={user} /> : <Navigate to="/login" />} 
+            element={isAuthenticated ? <ActivitiesList user={user} /> : <Navigate to="/auth" />} 
           />
           <Route 
             path="/activities/new" 
-            element={isAuthenticated ? <ActivityForm user={user} /> : <Navigate to="/login" />} 
+            element={isAuthenticated ? <ActivityForm user={user} /> : <Navigate to="/auth" />} 
           />
           <Route 
             path="/activities/:id/edit" 
-            element={isAuthenticated ? <ActivityForm user={user} /> : <Navigate to="/login" />} 
+            element={isAuthenticated ? <ActivityForm user={user} /> : <Navigate to="/auth" />} 
           />
           <Route 
             path="/summary" 
-            element={isAuthenticated ? <Summary user={user} /> : <Navigate to="/login" />} 
+            element={isAuthenticated ? <Summary user={user} /> : <Navigate to="/auth" />} 
           />
           <Route 
             path="/achievements" 
-            element={isAuthenticated ? <Achievements user={user} /> : <Navigate to="/login" />} 
+            element={isAuthenticated ? <Achievements user={user} /> : <Navigate to="/auth" />} 
           />
+          <Route 
+       path="/auth/google/callback/" 
+  element={<GoogleCallback setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} 
+/>
         </Routes>
       </div>
     </Router>

@@ -3,8 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const DashboardPage = ({ user }) => {
-  const [recentActivities, setRecentActivities] = useState([]);
+  const [activities, setActivities] = useState([]);
   const [summary, setSummary] = useState({});
+  const [achievements, setAchievements] = useState([]);
+  const [selectedTab, setSelectedTab] = useState('dashboard');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -24,10 +26,10 @@ const DashboardPage = ({ user }) => {
       
       if (activitiesResponse.ok) {
         const activitiesData = await activitiesResponse.json();
-        setRecentActivities(activitiesData.results || activitiesData);
+        setActivities(activitiesData.results || activitiesData);
       }
       
-      // Fetch summary
+      // Fetch summary data
       const summaryResponse = await fetch('/api/summary/', {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -38,6 +40,18 @@ const DashboardPage = ({ user }) => {
         const summaryData = await summaryResponse.json();
         setSummary(summaryData);
       }
+      
+      // Fetch achievements
+      const achievementsResponse = await fetch('/api/achievements/', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      if (achievementsResponse.ok) {
+        const achievementsData = await achievementsResponse.json();
+        setAchievements(achievementsData.results || achievementsData);
+      }
     } catch (error) {
       console.error('Error fetching dashboard data:', error);
     } finally {
@@ -45,190 +59,289 @@ const DashboardPage = ({ user }) => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    window.location.href = '/';
+  };
+
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="px-4 py-6 sm:px-0">
-          <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-          </div>
-        </div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <div className="px-4 py-6 sm:px-0">
-        <h1 className="text-2xl font-semibold text-gray-900">Welcome back, {user?.username}!</h1>
-        
-        {/* Summary Cards */}
-        <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="bg-white overflow-hidden shadow rounded-lg">
-            <div className="px-4 py-5 sm:p-6">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 bg-blue-500 rounded-md p-3">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+    <div className="min-h-screen bg-gray-100">
+      {/* Header */}
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <div className="flex items-center">
+              <div className="flex items-center space-x-2">
+                <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">M</span>
                 </div>
-                <div className="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt className="text-sm font-medium text-gray-500 truncate">Total Duration</dt>
-                    <dd className="text-2xl font-semibold text-gray-900">
-                      {summary.total_duration ? `${Math.round(summary.total_duration / 60)} hours` : '0 hours'}
-                    </dd>
-                  </dl>
-                </div>
+                <h1 className="text-xl font-bold text-gray-900">FitTrack</h1>
               </div>
             </div>
-          </div>
-
-          <div className="bg-white overflow-hidden shadow rounded-lg">
-            <div className="px-4 py-5 sm:p-6">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 bg-green-500 rounded-md p-3">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14v6m-3-3h6M6 10h2a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6a2 2 0 012-2zm10-4a2 2 0 11-4 0 2 2 0 014 0zM4 10a2 2 0 100-4 2 2 0 000 4zm16-2a2 2 0 11-4 0 2 2 0 014 0zm-6-4a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <div className="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt className="text-sm font-medium text-gray-500 truncate">Total Calories</dt>
-                    <dd className="text-2xl font-semibold text-gray-900">
-                      {summary.total_calories || 0}
-                    </dd>
-                  </dl>
-                </div>
-              </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <button
+                onClick={() => setSelectedTab('dashboard')}
+                className={`px-3 py-2 rounded-md text-sm font-medium ${selectedTab === 'dashboard' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-gray-100'}`}
+              >
+                Dashboard
+              </button>
+              <button
+                onClick={() => setSelectedTab('activities')}
+                className={`px-3 py-2 rounded-md text-sm font-medium ${selectedTab === 'activities' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-gray-100'}`}
+              >
+                Activities
+              </button>
+              <button
+                onClick={() => setSelectedTab('progress')}
+                className={`px-3 py-2 rounded-md text-sm font-medium ${selectedTab === 'progress' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-gray-100'}`}
+              >
+                Progress
+              </button>
+              <button
+                onClick={() => setSelectedTab('achievements')}
+                className={`px-3 py-2 rounded-md text-sm font-medium ${selectedTab === 'achievements' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-gray-100'}`}
+              >
+                Achievements
+              </button>
             </div>
-          </div>
-
-          <div className="bg-white overflow-hidden shadow rounded-lg">
-            <div className="px-4 py-5 sm:p-6">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 bg-yellow-500 rounded-md p-3">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                </div>
-                <div className="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt className="text-sm font-medium text-gray-500 truncate">Total Activities</dt>
-                    <dd className="text-2xl font-semibold text-gray-900">
-                      {summary.total_activities || 0}
-                    </dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white overflow-hidden shadow rounded-lg">
-            <div className="px-4 py-5 sm:p-6">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 bg-red-500 rounded-md p-3">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <div className="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt className="text-sm font-medium text-gray-500 truncate">Achievements</dt>
-                    <dd className="text-2xl font-semibold text-gray-900">
-                      {summary.achievements_count || 0}
-                    </dd>
-                  </dl>
-                </div>
-              </div>
+            <div className="flex items-center space-x-4">
+              <span className="text-sm text-gray-700">Welcome, {user?.username}</span>
+              <button
+                onClick={handleLogout}
+                className="bg-gray-200 text-gray-700 px-3 py-1 rounded-md text-sm font-medium hover:bg-gray-300"
+              >
+                Logout
+              </button>
             </div>
           </div>
         </div>
+      </header>
 
-        {/* Recent Activities */}
-        <div className="mt-8">
-          <div className="flex justify-between items-center">
-            <h2 className="text-lg font-medium text-gray-900">Recent Activities</h2>
-            <Link
-              to="/activities"
-              className="text-sm text-blue-600 hover:text-blue-500"
-            >
-              View all
-            </Link>
-          </div>
-          <div className="mt-4 shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Type
-                  </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Duration
-                  </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Calories
-                  </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Date
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {recentActivities.length > 0 ? (
-                  recentActivities.map((activity) => (
-                    <tr key={activity.id}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 capitalize">
-                        {activity.type}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {activity.duration} minutes
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {activity.calories} cal
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {new Date(activity.date).toLocaleDateString()}
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="4" className="px-6 py-4 text-center text-sm text-gray-500">
-                      No activities yet. <Link to="/activities/new" className="text-blue-600 hover:text-blue-500">Add your first activity</Link>
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Dashboard Tab */}
+        {selectedTab === 'dashboard' && (
+          <>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
+              <p className="text-gray-600">Track your fitness activities and progress</p>
+            </div>
 
-        {/* Quick Actions */}
-        <div className="mt-8">
-          <h2 className="text-lg font-medium text-gray-900">Quick Actions</h2>
-          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <Link
-              to="/activities/new"
-              className="inline-flex items-center justify-center p-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
-            >
-              Log New Activity
-            </Link>
-            <Link
-              to="/activities"
-              className="inline-flex items-center justify-center p-6 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50"
-            >
-              View All Activities
-            </Link>
-            <Link
-              to="/summary"
-              className="inline-flex items-center justify-center p-6 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50"
-            >
-              View Progress
-            </Link>
+            {/* Summary Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Total Activities</h3>
+                <p className="text-3xl font-bold text-blue-600">{summary.total_activities || 0}</p>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Total Duration</h3>
+                <p className="text-3xl font-bold text-green-600">
+                  {summary.total_duration ? `${Math.round(summary.total_duration / 60)} hours` : '0 hours'}
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Calories Burned</h3>
+                <p className="text-3xl font-bold text-red-600">{summary.total_calories || 0}</p>
+              </div>
+            </div>
+
+            {/* Quick Actions */}
+            <div className="bg-white rounded-lg shadow p-6 mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  to="/activities/new"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700"
+                >
+                  Log New Activity
+                </Link>
+                <Link
+                  to="/activities"
+                  className="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-300"
+                >
+                  View All Activities
+                </Link>
+                <Link
+                  to="/summary"
+                  className="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-300"
+                >
+                  View Progress
+                </Link>
+              </div>
+            </div>
+
+            {/* Recent Activities */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">Recent Activities</h3>
+                <Link
+                  to="/activities"
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                >
+                  View all
+                </Link>
+              </div>
+              
+              {activities.length > 0 ? (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Type
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Duration
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Calories
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Date
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {activities.map((activity) => (
+                        <tr key={activity.id}>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 capitalize">
+                            {activity.type}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {activity.duration} minutes
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {activity.calories} cal
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {new Date(activity.date).toLocaleDateString()}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-gray-500">No activities yet.</p>
+                  <Link
+                    to="/activities/new"
+                    className="text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    Add your first activity
+                  </Link>
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+        {/* Progress Tab */}
+        {selectedTab === 'progress' && (
+          <div className="bg-white rounded-lg shadow p-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Progress Analytics</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-blue-50 rounded-lg p-4">
+                <h3 className="text-lg font-semibold text-blue-800 mb-2">Weekly Summary</h3>
+                <div className="space-y-2">
+                  <p><span className="font-medium">Activities:</span> {summary.weekly_activities || 0}</p>
+                  <p><span className="font-medium">Duration:</span> {summary.weekly_duration ? `${Math.round(summary.weekly_duration / 60)} hours` : '0 hours'}</p>
+                  <p><span className="font-medium">Calories:</span> {summary.weekly_calories || 0}</p>
+                </div>
+              </div>
+              
+              <div className="bg-green-50 rounded-lg p-4">
+                <h3 className="text-lg font-semibold text-green-800 mb-2">Monthly Summary</h3>
+                <div className="space-y-2">
+                  <p><span className="font-medium">Activities:</span> {summary.monthly_activities || 0}</p>
+                  <p><span className="font-medium">Duration:</span> {summary.monthly_duration ? `${Math.round(summary.monthly_duration / 60)} hours` : '0 hours'}</p>
+                  <p><span className="font-medium">Calories:</span> {summary.monthly_calories || 0}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">Activity Distribution</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {summary.activity_types && Object.entries(summary.activity_types).map(([type, count]) => (
+                  <div key={type} className="bg-white rounded p-3 shadow-sm">
+                    <p className="font-medium capitalize">{type}</p>
+                    <p className="text-2xl font-bold text-blue-600">{count}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
+
+        {/* Achievements Tab */}
+        {selectedTab === 'achievements' && (
+          <div className="bg-white rounded-lg shadow p-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Your Achievements</h2>
+            
+            {achievements.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {achievements.map((achievement) => (
+                  <div key={achievement.id} className="border rounded-lg p-4 flex items-center">
+                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-yellow-600 font-bold">★</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{achievement.name}</h3>
+                      <p className="text-sm text-gray-600">{achievement.description}</p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Earned on: {new Date(achievement.date_earned).toLocaleDateString()}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-gray-400 text-2xl">🏆</span>
+                </div>
+                <p className="text-gray-500">No achievements yet.</p>
+                <p className="text-sm text-gray-400 mt-1">Keep logging activities to earn achievements!</p>
+              </div>
+            )}
+            
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Available Achievements</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="border rounded-lg p-4 bg-gray-50 opacity-75">
+                  <h4 className="font-medium text-gray-700">First Workout</h4>
+                  <p className="text-sm text-gray-600">Complete your first activity</p>
+                </div>
+                <div className="border rounded-lg p-4 bg-gray-50 opacity-75">
+                  <h4 className="font-medium text-gray-700">Weekly Consistency</h4>
+                  <p className="text-sm text-gray-600">Log activities for 7 consecutive days</p>
+                </div>
+                <div className="border rounded-lg p-4 bg-gray-50 opacity-75">
+                  <h4 className="font-medium text-gray-700">Marathon Runner</h4>
+                  <p className="text-sm text-gray-600">Run a total of 42 km</p>
+                </div>
+                <div className="border rounded-lg p-4 bg-gray-50 opacity-75">
+                  <h4 className="font-medium text-gray-700">Calorie Crusher</h4>
+                  <p className="text-sm text-gray-600">Burn 10,000 calories total</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
     </div>
   );
 };
