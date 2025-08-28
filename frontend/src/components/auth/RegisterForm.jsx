@@ -3,18 +3,35 @@ import { useAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 
 export default function RegisterForm() {
-  const { register } = useAuth();
+  const auth = useAuth();
+  const { register } = auth || {}; // This prevents the error
+  
   const [full_name, setFullName] = useState("");
-  const [email, setEmail]       = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [ok, setOk] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setOk("");
+    
+    if (!register) {
+      setOk("Authentication service not available");
+      return;
+    }
+    
     await register({ full_name, email, password });
     setOk("Account created — you can log in now.");
   };
+
+  if (!auth) {
+    return (
+      <div className="max-w-sm mx-auto p-6">
+        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+        <p className="text-center mt-2">Loading authentication...</p>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={onSubmit} className="max-w-sm mx-auto space-y-3 p-6 border rounded">
