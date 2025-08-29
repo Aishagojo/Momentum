@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from "./components/common/Header";
 import LandingPage from "./components/common/LandingPage";
-import AuthPage from "./components/auth/AuthPage" // NEW: Import the unified auth page
+import AuthPage from "./components/auth/AuthPage";
 import Dashboard from "./pages/DashboardPage";
-import { ActivityForm } from "./activities/ActivityForm";// Changed from named to default import
+import  { ActivityForm } from "./activities/ActivityForm";
 import ActivitiesList from "./activities/ActivityList";
 import Summary from "./components/summary/Summary";
 import Achievements from "./pages/AchievementsPage";
@@ -29,8 +29,8 @@ function App() {
 
   const verifyToken = async (token) => {
     try {
-      const response = await fetch('/api/auth/verify/', {
-        method: 'POST',
+      const response = await fetch('/api/auth/profile/', {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
@@ -42,11 +42,49 @@ function App() {
         setIsAuthenticated(true);
         setUser(userData);
       } else {
+        // Try to refresh the token
+        const refreshToken = localStorage.getItem('refreshToken');
+        if (refreshToken) {
+          try {
+            const refreshResponse = await fetch('/api/auth/token/refresh/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ refresh: refreshToken }),
+            });
+            
+            if (refreshResponse.ok) {
+              const tokenData = await refreshResponse.json();
+              localStorage.setItem('accessToken', tokenData.access);
+              // Retry getting user profile
+              const retryResponse = await fetch('/api/auth/profile/', {
+                headers: {
+                  'Authorization': `Bearer ${tokenData.access}`
+                }
+              });
+              
+              if (retryResponse.ok) {
+                const userData = await retryResponse.json();
+                setIsAuthenticated(true);
+                setUser(userData);
+                setLoading(false);
+                return;
+              }
+            }
+          } catch (refreshError) {
+            console.error('Token refresh failed:', refreshError);
+          }
+        }
+        
+        // If all fails, clear tokens
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
       }
     } catch (error) {
       console.error('Token verification failed:', error);
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
     } finally {
       setLoading(false);
     }
@@ -69,14 +107,10 @@ function App() {
             path="/" 
             element={isAuthenticated ? <Dashboard user={user} /> : <LandingPage />} 
           />
-          {/* NEW: Unified auth page route */}
           <Route 
             path="/auth" 
             element={isAuthenticated ? <Navigate to="/" /> : <AuthPage setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} 
           />
-          {/* REMOVED: Separate login and register routes */}
-          {/* <Route path="/login" element={...} /> */}
-          {/* <Route path="/register" element={...} /> */}
           <Route 
             path="/activities" 
             element={isAuthenticated ? <ActivitiesList user={user} /> : <Navigate to="/auth" />} 
@@ -98,9 +132,9 @@ function App() {
             element={isAuthenticated ? <Achievements user={user} /> : <Navigate to="/auth" />} 
           />
           <Route 
-       path="/auth/google/callback/" 
-  element={<GoogleCallback setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} 
-/>
+            path="/auth/google/callback/" 
+            element={<GoogleCallback setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} 
+          />
         </Routes>
       </div>
     </Router>

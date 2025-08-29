@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum Fitness API Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #f9c74f;
+            --danger: #f94144;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7ec 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .developer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .developer i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .nav-links {
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-bottom: 12px;
+        }
+        
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark);
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .nav-links i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .section-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .endpoints {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .endpoint {
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .endpoint-header {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--light);
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .method {
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .method.get {
+            background: var(--success);
+            color: white;
+        }
+        
+        .method.post {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .method.put {
+            background: var(--warning);
+            color: black;
+        }
+        
+        .method.delete {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .url {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .endpoint-body {
+            padding: 20px;
+        }
+        
+        .endpoint-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .endpoint-example {
+            background: #2b2d42;
+            color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+        
+        .json-key {
+            color: #4cc9f0;
+        }
+        
+        .json-string {
+            color: #f9c74f;
+        }
+        
+        .json-number {
+            color: #90be6d;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .action-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .action-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .action-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .action-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .action-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+        }
+        
+        .btn.disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .coming-soon {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--gray);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--gray);
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-running logo-icon"></i>
+                <h1>Momentum Fitness API</h1>
+            </div>
+            <p class="subtitle">A comprehensive REST API for fitness activity tracking</p>
+            <div class="developer">
+                <i class="fas fa-user-circle"></i>
+                <span>Developed by Aisha Omar Farah</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="sidebar">
+                <h3>Navigation</h3>
+                <ul class="nav-links">
+                    <li><a href="#auth" class="active"><i class="fas fa-key"></i> Authentication</a></li>
+                    <li><a href="#activities"><i class="fas fa-running"></i> Activities</a></li>
+                    <li><a href="#testing"><i class="fas fa-vial"></i> Testing</a></li>
+                </ul>
+            </div>
+
+            <div class="main-content">
+                <section id="auth" class="section">
+                    <div class="section-header">
+                        <i class="fas fa-key section-icon"></i>
+                        <h2 class="section-title">Authentication Endpoints</h2>
+                    </div>
+                    <div class="endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/api/auth/register/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Register a new user account. Returns user details and JWT tokens.</p>
+                                <div class="endpoint-example">
+                                    {<br>
+                                    &nbsp;&nbsp;<span class="json-key">"username"</span>: <span class="json-string">"aisha"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"email"</span>: <span class="json-string">"aisha@example.com"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"password"</span>: <span class="json-string">"password123"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"password_confirm"</span>: <span class="json-string">"password123"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"first_name"</span>: <span class="json-string">"Aisha"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"last_name"</span>: <span class="json-string">"Omar"</span><br>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/api/auth/token/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Login user and receive JWT access and refresh tokens.</p>
+                                <div class="endpoint-example">
+                                    {<br>
+                                    &nbsp;&nbsp;<span class="json-key">"username"</span>: <span class="json-string">"aisha"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"password"</span>: <span class="json-string">"password123"</span><br>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/api/auth/token/refresh/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Refresh an expired access token using a valid refresh token.</p>
+                                <div class="endpoint-example">
+                                    {<br>
+                                    &nbsp;&nbsp;<span class="json-key">"refresh"</span>: <span class="json-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."</span><br>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/api/auth/profile/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Retrieve the authenticated user's profile information. Requires authentication.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="activities" class="section">
+                    <div class="section-header">
+                        <i class="fas fa-running section-icon"></i>
+                        <h2 class="section-title">Activities Endpoints</h2>
+                    </div>
+                    <div class="endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/api/activities/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">List all activities for the authenticated user. Requires authentication.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/api/activities/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Create a new activity. Requires authentication.</p>
+                                <div class="endpoint-example">
+                                    {<br>
+                                    &nbsp;&nbsp;<span class="json-key">"type"</span>: <span class="json-string">"running"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"duration"</span>: <span class="json-number">30</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"calories"</span>: <span class="json-number">250</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"distance"</span>: <span class="json-number">5.2</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"date"</span>: <span class="json-string">"2025-08-29"</span>,<br>
+                                    &nbsp;&nbsp;<span class="json-key">"notes"</span>: <span class="json-string">"Evening run around the park"</span><br>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/api/activities/&lt;id&gt;/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Retrieve a specific activity by ID. Requires authentication and ownership.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method put">PUT</span>
+                                <span class="url">/api/activities/&lt;id&gt;/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Update a specific activity. Requires authentication and ownership.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method delete">DELETE</span>
+                                <span class="url">/api/activities/&lt;id&gt;/</span>
+                            </div>
+                            <div class="endpoint-body">
+                                <p class="endpoint-description">Delete a specific activity. Requires authentication and ownership.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="testing" class="section">
+                    <div class="section-header">
+                        <i class="fas fa-vial section-icon"></i>
+                        <h2 class="section-title">Testing Instructions</h2>
+                    </div>
+                    <div class="endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-body">
+                                <p class="endpoint-description"><strong>1. Start the development server:</strong></p>
+                                <div class="endpoint-example">
+                                    python manage.py runserver 0.0.0.0:8080
+                                </div>
+                                
+                                <p class="endpoint-description" style="margin-top: 20px;"><strong>2. Register a new user:</strong></p>
+                                <div class="endpoint-example">
+                                    curl -X POST http://127.0.0.1:8080/api/auth/register/ \<br>
+                                    -H "Content-Type: application/json" \<br>
+                                    -d '{<br>
+                                    &nbsp;&nbsp;"username": "testuser",<br>
+                                    &nbsp;&nbsp;"email": "test@example.com",<br>
+                                    &nbsp;&nbsp;"password": "password123",<br>
+                                    &nbsp;&nbsp;"password_confirm": "password123",<br>
+                                    &nbsp;&nbsp;"first_name": "Test",<br>
+                                    &nbsp;&nbsp;"last_name": "User"<br>
+                                    }'
+                                </div>
+                                
+                                <p class="endpoint-description" style="margin-top: 20px;"><strong>3. Login to get JWT tokens:</strong></p>
+                                <div class="endpoint-example">
+                                    curl -X POST http://127.0.0.1:8080/api/auth/token/ \<br>
+                                    -H "Content-Type: application/json" \<br>
+                                    -d '{<br>
+                                    &nbsp;&nbsp;"username": "testuser",<br>
+                                    &nbsp;&nbsp;"password": "password123"<br>
+                                    }'
+                                </div>
+                                
+                                <p class="endpoint-description" style="margin-top: 20px;"><strong>4. Use the access token for authenticated requests:</strong></p>
+                                <div class="endpoint-example">
+                                    curl -X GET http://127.0.0.1:8080/api/activities/ \<br>
+                                    -H "Authorization: Bearer YOUR_ACCESS_TOKEN_HERE"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-header">
+                        <i class="fas fa-rocket section-icon"></i>
+                        <h2 class="section-title">Quick Actions</h2>
+                    </div>
+                    <div class="quick-actions">
+                        <div class="action-card">
+                            <i class="fas fa-code action-icon"></i>
+                            <h3 class="action-title">API Testing</h3>
+                            <p class="action-description">Test the API endpoints using Postman or curl commands</p>
+                            <a href="#testing" class="btn">View Instructions</a>
+                        </div>
+                        
+                        <div class="action-card">
+                            <i class="fas fa-server action-icon"></i>
+                            <h3 class="action-title">Admin Panel</h3>
+                            <p class="action-description">Access the Django admin interface</p>
+                            <a href="http://127.0.0.1:8080/admin/" class="btn">Open Admin</a>
+                        </div>
+                        
+                        <div class="action-card">
+                            <i class="fas fa-book action-icon"></i>
+                            <h3 class="action-title">API Root</h3>
+                            <p class="action-description">Visit the API root endpoint</p>
+                            <a href="http://127.0.0.1:8080/" class="btn">Visit API</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <p>Momentum Fitness Tracker API • Version 1.0 • Built with Django REST Framework</p>
+            <p>© 2025 Aisha Omar Farah. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('.section');
+            
+            // Set first link as active by default
+            links[0].classList.add('active');
+            
+            // Add click event to links
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    links.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Get the target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    // Scroll to the target section
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Add intersection observer to highlight current section in view
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.6
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        links.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

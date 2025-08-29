@@ -1,50 +1,163 @@
-import { useState } from "react";
-import { useAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
+// components/auth/RegisterForm.jsx
+import React, { useState } from 'react';
 
-export default function RegisterForm() {
-  const auth = useAuth();
-  const { register } = auth || {}; // This prevents the error
-  
-  const [full_name, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [ok, setOk] = useState("");
+const RegisterForm = ({ setIsAuthenticated, setUser }) => {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    password_confirm: '',
+    first_name: '',
+    last_name: '',
+    fitness_level: 'beginner',
+  });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setOk("");
-    
-    if (!register) {
-      setOk("Authentication service not available");
-      return;
-    }
-    
-    await register({ full_name, email, password });
-    setOk("Account created — you can log in now.");
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  if (!auth) {
-    return (
-      <div className="max-w-sm mx-auto p-6">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
-        <p className="text-center mt-2">Loading authentication...</p>
-      </div>
-    );
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (formData.password !== formData.password_confirm) {
+      return setError("Passwords don't match");
+    }
+
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/auth/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('accessToken', data.access);
+        localStorage.setItem('refreshToken', data.refresh);
+        setIsAuthenticated(true);
+        setUser(data.user);
+      } else {
+        const errorData = await response.json();
+        // Handle field-specific errors
+        if (typeof errorData === 'object') {
+          const errorMessages = Object.values(errorData).flat();
+          setError(errorMessages.join(', '));
+        } else {
+          setError(errorData.detail || 'Registration failed');
+        }
+      }
+    } catch (error) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <form onSubmit={onSubmit} className="max-w-sm mx-auto space-y-3 p-6 border rounded">
-      <h2 className="text-xl font-semibold">Create account</h2>
-      {ok && <p className="text-green-700">{ok}</p>}
-      <input className="w-full border p-2 rounded" placeholder="Full name"
-             value={full_name} onChange={(e)=>setFullName(e.target.value)} />
-      <input className="w-full border p-2 rounded" placeholder="Email"
-             type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-      <input className="w-full border p-2 rounded" placeholder="Password"
-             type="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
-      <button className="w-full bg-black text-white p-2 rounded">Register</button>
-      <p className="text-sm">Have an account? <Link className="underline" to="/login">Login</Link></p>
+    <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+      {error && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+          {error}
+        </div>
+      )}
+      <div className="rounded-md shadow-sm space-y-4">
+        <div>
+          <input
+            name="username"
+            type="text"
+            required
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+            placeholder="Username"
+            value={formData.username}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            name="email"
+            type="email"
+            required
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+            placeholder="Email address"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <input
+            name="first_name"
+            type="text"
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+            placeholder="First name"
+            value={formData.first_name}
+            onChange={handleChange}
+          />
+          <input
+            name="last_name"
+            type="text"
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+            placeholder="Last name"
+            value={formData.last_name}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <select
+            name="fitness_level"
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+            value={formData.fitness_level}
+            onChange={handleChange}
+          >
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        <div>
+          <input
+            name="password"
+            type="password"
+            required
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            name="password_confirm"
+            type="password"
+            required
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+            placeholder="Confirm Password"
+            value={formData.password_confirm}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          disabled={loading}
+          className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+        >
+          {loading ? 'Creating account...' : 'Sign up'}
+        </button>
+      </div>
     </form>
   );
-}
+};
+
+export default RegisterForm;

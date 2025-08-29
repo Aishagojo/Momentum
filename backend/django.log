@@ -1,0 +1,391 @@
+WARNING 2025-08-29 15:21:21,675 basehttp 42158 137901582055104 "GET / HTTP/1.1" 404 2974
+WARNING 2025-08-29 15:21:24,083 basehttp 42158 137901582055104 "GET /favicon.ico HTTP/1.1" 404 3025
+WARNING 2025-08-29 15:28:25,847 basehttp 42158 137901582055104 "GET / HTTP/1.1" 404 2974
+WARNING 2025-08-29 15:28:26,528 basehttp 42158 137901582055104 "GET / HTTP/1.1" 404 2974
+WARNING 2025-08-29 15:28:56,711 basehttp 42158 137901582055104 "GET / HTTP/1.1" 404 2974
+WARNING 2025-08-29 15:29:02,406 basehttp 42158 137901582055104 "GET / HTTP/1.1" 404 2974
+WARNING 2025-08-29 15:57:41,695 basehttp 50193 136576583595712 "GET / HTTP/1.1" 404 2974
+ERROR 2025-08-29 15:58:56,815 basehttp 50492 126056738584256 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:58:56,820 basehttp 50492 126056738584256 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:00,668 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:00,673 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:00,720 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:00,728 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:00,737 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:00,738 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,405 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,409 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,418 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,420 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,424 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,428 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,874 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,880 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,887 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:02,892 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:03,214 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:03,218 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:03,226 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:03,228 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:03,231 basehttp 50492 126056721798848 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 15:59:03,237 basehttp 50492 126056713406144 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:27:50,580 basehttp 54995 137089356134080 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:27:50,582 basehttp 54995 137089356134080 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:28:58,402 basehttp 54995 137089356134080 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:28:58,405 basehttp 54995 137089356134080 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2025-08-29 16:29:42,352 basehttp 55623 139715916330688 "GET / HTTP/1.1" 404 2974
+WARNING 2025-08-29 16:29:45,985 basehttp 55623 139715916330688 "GET /favicon.ico HTTP/1.1" 404 3025
+ERROR 2025-08-29 16:38:52,841 basehttp 57165 128611167237824 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:38:52,843 basehttp 57165 128611167237824 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:38:56,731 basehttp 57165 128611150452416 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:38:56,736 basehttp 57165 128611150452416 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:38:56,759 basehttp 57165 128611150452416 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:38:56,763 basehttp 57165 128611142059712 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:38:56,767 basehttp 57165 128611142059712 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 16:38:56,769 basehttp 57165 128611150452416 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:56:11,342 basehttp 62472 124118815995584 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:56:11,344 basehttp 62472 124118815995584 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:56:16,198 basehttp 62472 124118799210176 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:56:16,201 basehttp 62472 124118582163136 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:56:16,207 basehttp 62472 124118582163136 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:56:16,208 basehttp 62472 124118799210176 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:00,886 basehttp 62822 132466355467968 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:00,888 basehttp 62822 132466355467968 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:07,896 basehttp 62822 132466338682560 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:07,899 basehttp 62822 132466338682560 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:11,895 basehttp 62822 132466338682560 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:11,899 basehttp 62822 132466338682560 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:11,922 basehttp 62822 132466338682560 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:11,923 basehttp 62822 132466330289856 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:11,931 basehttp 62822 132466330289856 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 17:58:11,933 basehttp 62822 132466338682560 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:01:14,235 basehttp 63507 132759672583872 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:01:14,237 basehttp 63507 132759672583872 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:07,660 basehttp 63849 139973678331584 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:07,663 basehttp 63849 139973678331584 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:27,874 basehttp 63849 139973453936320 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:27,882 basehttp 63849 139973453936320 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:27,892 basehttp 63849 139973453936320 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:27,894 basehttp 63849 139973445543616 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:27,898 basehttp 63849 139973453936320 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:27,901 basehttp 63849 139973445543616 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:35,188 basehttp 63849 139973445543616 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:02:35,190 basehttp 63849 139973445543616 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:04:01,448 basehttp 64328 135496278734528 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:04:01,450 basehttp 64328 135496278734528 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:06:54,396 basehttp 64328 135496270341824 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:06:54,398 basehttp 64328 135496270341824 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:06:54,411 basehttp 64328 135496270341824 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:06:54,411 basehttp 64328 135496278734528 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:06:54,414 basehttp 64328 135496278734528 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:06:54,417 basehttp 64328 135496278734528 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:09:58,170 basehttp 65238 137928560867008 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:09:58,172 basehttp 65238 137928560867008 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:10:01,944 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:10:01,949 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:10:01,957 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:10:01,959 basehttp 65238 137928535688896 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:10:01,962 basehttp 65238 137928535688896 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:10:01,965 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:11:02,836 basehttp 65238 137928560867008 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:11:02,838 basehttp 65238 137928560867008 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:19,578 basehttp 65238 137928552474304 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:19,581 basehttp 65238 137928552474304 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:19,585 basehttp 65238 137928552474304 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:19,587 basehttp 65238 137928560867008 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:19,588 basehttp 65238 137928560867008 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:19,589 basehttp 65238 137928552474304 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:49,429 basehttp 65238 137928552474304 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:12:49,435 basehttp 65238 137928552474304 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:01,809 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:01,814 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:05,267 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:05,271 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:05,280 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:05,282 basehttp 65238 137928535688896 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:05,287 basehttp 65238 137928535688896 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:13:05,291 basehttp 65238 137928544081600 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:16:05,279 log 66524 129272602687168 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:16:05,281 basehttp 66524 129272602687168 "GET / HTTP/1.1" 400 81083
+ERROR 2025-08-29 18:16:08,637 log 66524 129272594294464 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:16:08,638 basehttp 66524 129272594294464 "GET /favicon.ico HTTP/1.1" 400 81038
+ERROR 2025-08-29 18:16:47,449 log 66524 129272594294464 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:16:47,452 basehttp 66524 129272594294464 "GET / HTTP/1.1" 400 81220
+ERROR 2025-08-29 18:16:48,272 log 66524 129272602687168 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:16:48,278 basehttp 66524 129272602687168 "GET /favicon.ico HTTP/1.1" 400 81038
+ERROR 2025-08-29 18:17:18,408 log 66862 123598999123648 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:17:18,410 basehttp 66862 123598999123648 "GET / HTTP/1.1" 400 81083
+ERROR 2025-08-29 18:17:21,680 log 66862 123598990730944 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:17:21,682 basehttp 66862 123598990730944 "GET /favicon.ico HTTP/1.1" 400 81038
+ERROR 2025-08-29 18:25:44,059 log 67612 133080599754432 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:25:44,062 basehttp 67612 133080599754432 "GET / HTTP/1.1" 400 81083
+ERROR 2025-08-29 18:25:47,244 log 67612 133080591361728 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:25:47,246 basehttp 67612 133080591361728 "GET /favicon.ico HTTP/1.1" 400 81038
+ERROR 2025-08-29 18:28:49,245 log 67969 132748245202624 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:28:49,312 basehttp 67969 132748245202624 "GET / HTTP/1.1" 400 81083
+ERROR 2025-08-29 18:28:52,237 log 67969 132748236809920 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:28:52,239 basehttp 67969 132748236809920 "GET /favicon.ico HTTP/1.1" 400 81038
+ERROR 2025-08-29 18:29:51,344 basehttp 68234 136529273943744 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:29:51,346 basehttp 68234 136529273943744 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:29:56,952 basehttp 68234 136529257158336 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:29:56,959 basehttp 68234 136529257158336 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:29:56,999 basehttp 68234 136529257158336 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:29:57,006 basehttp 68234 136529248765632 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:29:57,009 basehttp 68234 136529257158336 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:29:57,012 basehttp 68234 136529248765632 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-29 18:31:05,448 log 68611 130661614614208 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:31:05,450 basehttp 68611 130661614614208 "GET / HTTP/1.1" 400 81208
+ERROR 2025-08-29 18:31:08,545 log 68611 130661606221504 Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8080'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+WARNING 2025-08-29 18:31:08,547 basehttp 68611 130661606221504 "GET /favicon.ico HTTP/1.1" 400 81163
+WARNING 2025-08-29 18:31:52,844 basehttp 68611 130661606221504 "GET /favicon.ico HTTP/1.1" 404 3027
+WARNING 2025-08-29 18:54:09,154 basehttp 72293 127360256964288 "GET /favicon.ico HTTP/1.1" 404 2650
+WARNING 2025-08-29 19:14:57,882 basehttp 72293 127360256964288 "POST /api/auth/register/ HTTP/1.1" 400 126
+WARNING 2025-08-29 19:18:47,991 basehttp 72293 127360256964288 "GET /api/activities/ HTTP/1.1" 401 58
+WARNING 2025-08-29 19:20:17,253 basehttp 72293 127360256964288 "GET /api/activities/ HTTP/1.1" 401 58
+WARNING 2025-08-29 19:29:58,352 basehttp 75554 140363445565120 "GET /api/auth/register/ HTTP/1.1" 405 40
+WARNING 2025-08-29 19:33:47,372 basehttp 75554 140363197040320 "GET /api/auth/register/ HTTP/1.1" 405 40
+WARNING 2025-08-29 19:38:04,924 basehttp 75554 140363205433024 "GET /favicon.ico HTTP/1.1" 404 3544
+WARNING 2025-08-29 19:40:59,529 basehttp 76808 128702672271040 "GET /api/auth/register/ HTTP/1.1" 405 40
+WARNING 2025-08-29 19:43:13,683 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 58
+ERROR 2025-08-29 19:47:35,690 log 76808 128702663878336 Internal Server Error: /api/auth/token
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8080/api/auth/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-29 19:47:35,691 basehttp 76808 128702663878336 "POST /api/auth/token HTTP/1.1" 500 81828
+WARNING 2025-08-29 19:47:44,116 basehttp 76808 128702663878336 "POST /api/auth/token/ HTTP/1.1" 400 73
+WARNING 2025-08-29 19:48:16,440 basehttp 76808 128702663878336 "POST /api/auth/token/ HTTP/1.1" 400 73
+ERROR 2025-08-29 19:50:10,520 log 76808 128702663878336 Internal Server Error: /api/auth/token
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8080/api/auth/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-29 19:50:10,521 basehttp 76808 128702663878336 "POST /api/auth/token HTTP/1.1" 500 81828
+WARNING 2025-08-29 19:50:42,427 basehttp 76808 128702663878336 "GET /api/auth/token/ HTTP/1.1" 405 40
+ERROR 2025-08-29 19:50:49,969 log 76808 128702663878336 Internal Server Error: /api/auth/token
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8080/api/auth/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-29 19:50:49,970 basehttp 76808 128702663878336 "POST /api/auth/token HTTP/1.1" 500 81828
+ERROR 2025-08-29 19:50:55,704 log 76808 128702663878336 Internal Server Error: /api/auth/token
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8080/api/auth/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-29 19:50:55,705 basehttp 76808 128702663878336 "POST /api/auth/token HTTP/1.1" 500 81828
+WARNING 2025-08-29 19:55:23,413 basehttp 76808 128702663878336 "PUT /api/auth/profile/ HTTP/1.1" 401 58
+WARNING 2025-08-29 19:56:17,833 basehttp 76808 128702663878336 "GET /api/activities/ HTTP/1.1" 401 58
+WARNING 2025-08-29 19:56:22,569 basehttp 76808 128702663878336 "GET /api/activities/ HTTP/1.1" 401 58
+WARNING 2025-08-29 19:58:44,618 basehttp 76808 128702663878336 "GET /api/auth/token/ HTTP/1.1" 405 40
+WARNING 2025-08-29 19:58:55,265 basehttp 76808 128702663878336 "PUT /api/auth/token/ HTTP/1.1" 405 40
+WARNING 2025-08-29 20:15:58,825 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 400 75
+WARNING 2025-08-29 20:16:23,563 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 400 75
+WARNING 2025-08-29 20:17:02,996 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 58
+WARNING 2025-08-29 20:19:00,988 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:19:01,517 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:19:02,335 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:19:15,670 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:19:27,651 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:19:39,450 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:19:55,564 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:19:59,312 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:20:02,848 basehttp 76808 128702663878336 "POST /api/activities/ HTTP/1.1" 401 172
+WARNING 2025-08-29 20:26:33,409 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 75
+WARNING 2025-08-29 20:27:28,469 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 81
+WARNING 2025-08-29 20:28:05,036 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 89
+WARNING 2025-08-29 20:28:21,237 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 81
+WARNING 2025-08-29 20:29:06,912 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 81
+WARNING 2025-08-29 20:29:31,793 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 36
