@@ -1,66 +1,92 @@
-# Momentum Fitness Tracker
+# Momentum Fitness Tracker API
 
-A comprehensive full-stack web application for tracking and analyzing fitness activities, built with Django REST Framework backend and React frontend.
+A high-performance REST API for fitness activity tracking, built with Django REST Framework. Provides full CRUD operations with JWT authentication.
 
-## Features
+## 🚀 Features
 
-- **Activity Tracking**: Log workouts including running, cycling, swimming, and weightlifting
-- **Progress Analytics**: View detailed summaries and trends of your fitness journey
-- **Achievement System**: Earn badges and milestones for consistency and progress
-- **User Authentication**: Secure login and registration system
-- **RESTful API**: Clean and well-documented API endpoints
+- **JWT Authentication** - Secure token-based auth system
+- **Activity Management** - Complete CRUD for fitness activities
+- **RESTful Design** - Clean, intuitive API endpoints
+- **MySQL Database** - Scalable data storage
+- **CORS Support** - Ready for frontend integration
 
-## Tech Stack
+## 📦 Installation
 
-**Backend:**
-- Python
-- Django REST Framework
-- MySQL Database
-- JWT Authentication
+### Prerequisites
+- Python 3.9+
+- MySQL 5.7+
+- pip
 
-**Frontend:**
-- React.js
-- Tailwind CSS
-- Axios for API calls
-- React Router
-
-## Project Structure
-momentum/
-├── backend/ # Django REST API
-│ ├── config/ # Project settings
-│ ├── logs/ # Main application
-│ ├── requirements.txt # Dependencies
-│ └── manage.py # Django management
-└── frontend/ # React application
-├── src/ # Source code
-└── package.json # Dependencies
-
-
-## Installation & Setup
-
-### Backend Setup:
+### Quick Setup
 ```bash
-cd backend
+# Clone repository
+git clone <your-repo-url>
+cd momentum/backend
+
+# Create virtual environment
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate  # Windows
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Configure environment
+cp .env.example .env
+# Edit .env with your database credentials
+
+# Run migrations
 python manage.py migrate
+
+# Start development server
 python manage.py runserver
 
-cd frontend
-npm install
-npm run dev
 
-API Endpoints
-POST /api/auth/register/ - User registration
-
-POST /api/auth/login/ - User login
-
-GET /api/activities/ - List activities
-
-POST /api/activities/ - Create activity
-
-GET /api/analytics/ - Progress statistics
-
-Author
-Your Name - ALX Backend Student
+ API Endpoints
+Authentication
+Method	Endpoint	Description
+POST	/api/auth/register/	User registration
+POST	/api/auth/token/	Obtain JWT tokens
+POST	/api/auth/token/refresh/	Refresh access token
+Activities
+Method	Endpoint	Description
+GET	/api/activities/	List all activities
+POST	/api/activities/	Create new activity
+GET	/api/activities/{id}/	Get specific activity
+PUT	/api/activities/{id}/	Update activity
+DELETE	/api/activities/{id}/	Delete activity
+💡 Usage Examples
+User Registration
+bash
+curl -X POST http://localhost:8000/api/auth/register/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "password": "securepass123",
+    "password2": "securepass123",
+    "email": "user@example.com"
+  }'
+User Login
+bash
+curl -X POST http://localhost:8000/api/auth/token/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "password": "securepass123"
+  }'
+Create Activity
+bash
+curl -X POST http://localhost:8000/api/activities/ \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -d '{
+    "type": "running",
+    "duration": 30,
+    "distance": 5.2,
+    "calories": 350,
+    "date": "2024-01-15"
+  }'
+Get All Activities
+bash
+curl -X GET http://localhost:8000/api/activities/ \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"

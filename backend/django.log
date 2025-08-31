@@ -389,3 +389,97 @@ WARNING 2025-08-29 20:28:05,036 basehttp 85309 136899297531584 "POST /api/activi
 WARNING 2025-08-29 20:28:21,237 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 81
 WARNING 2025-08-29 20:29:06,912 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 81
 WARNING 2025-08-29 20:29:31,793 basehttp 85309 136899297531584 "POST /api/activities/ HTTP/1.1" 400 36
+WARNING 2025-08-31 17:05:43,275 basehttp 67224 129219286791872 "GET /favicon.ico HTTP/1.1" 404 3542
+WARNING 2025-08-31 17:48:35,054 basehttp 67224 129219286791872 "POST /api/auth/register/ HTTP/1.1" 400 126
+WARNING 2025-08-31 17:48:44,947 basehttp 67224 129219286791872 "POST /api/auth/register/ HTTP/1.1" 400 73
+WARNING 2025-08-31 17:49:41,435 basehttp 67224 129219286791872 "POST /api/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-08-31 17:50:37,472 basehttp 67224 129219286791872 "POST /api/auth/register/ HTTP/1.1" 400 73
+WARNING 2025-08-31 17:52:55,168 basehttp 67224 129219286791872 "POST /api/auth/login/ HTTP/1.1" 404 6618
+WARNING 2025-08-31 17:53:49,086 basehttp 67224 129219286791872 "POST /api/auth/token/%20 HTTP/1.1" 404 6623
+WARNING 2025-08-31 18:03:33,693 basehttp 74745 126801862981312 "POST /api/activities/%20/ HTTP/1.1" 405 41
+ERROR 2025-08-31 18:03:41,568 log 74745 126801862981312 Internal Server Error: /api/activities/ 
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8080/api/activities/%20/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-31 18:03:41,569 basehttp 74745 126801862981312 "POST /api/activities/%20 HTTP/1.1" 500 81940
+WARNING 2025-08-31 18:05:11,255 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:06:25,823 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:06:53,849 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:08:02,903 basehttp 74745 126801862981312 "PUT /api/activities/ HTTP/1.1" 405 40
+ERROR 2025-08-31 18:08:08,810 log 74745 126801862981312 Internal Server Error: /api/activities
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8080/api/activities/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-31 18:08:08,811 basehttp 74745 126801862981312 "PUT /api/activities HTTP/1.1" 500 81871
+WARNING 2025-08-31 18:08:27,100 basehttp 74745 126801862981312 "PUT /api/activities/ HTTP/1.1" 405 40
+WARNING 2025-08-31 18:08:43,194 basehttp 74745 126801862981312 "PUT /api/activities/%20/ HTTP/1.1" 404 23
+WARNING 2025-08-31 18:09:25,586 basehttp 74745 126801862981312 "PUT /api/activities/1/%20/ HTTP/1.1" 404 5697
+WARNING 2025-08-31 18:10:44,127 basehttp 74745 126801862981312 "POST /api/activities/%20/ HTTP/1.1" 405 41
+WARNING 2025-08-31 18:12:14,671 basehttp 74745 126801862981312 "POST /api/activities/%20/ HTTP/1.1" 405 41
+ERROR 2025-08-31 18:12:55,515 log 74745 126801862981312 Internal Server Error: /api/activities/ 
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8080/api/activities/%20/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-31 18:12:55,516 basehttp 74745 126801862981312 "POST /api/activities/%20 HTTP/1.1" 500 81940
+WARNING 2025-08-31 18:13:05,397 basehttp 74745 126801862981312 "GET /api/activities/%20/ HTTP/1.1" 404 23
+ERROR 2025-08-31 18:13:09,874 log 74745 126801862981312 Internal Server Error: /api/activities/ 
+Traceback (most recent call last):
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aisha-lul/Momentum  -fitnessTracker/momentum/backend/venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8080/api/activities/%20/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-08-31 18:13:09,875 basehttp 74745 126801862981312 "POST /api/activities/%20 HTTP/1.1" 500 81940
+WARNING 2025-08-31 18:21:28,423 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:21:35,835 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:21:41,054 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:21:52,587 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:22:06,710 basehttp 74745 126801862981312 "PUT /api/activities/1/ HTTP/1.1" 404 49
+WARNING 2025-08-31 18:25:24,950 basehttp 77887 133280798078656 "GET /api/activities/%20/ HTTP/1.1" 404 23
+WARNING 2025-08-31 18:31:57,774 basehttp 77887 133280798078656 "POST /api/activities/%20/ HTTP/1.1" 405 41
+WARNING 2025-08-31 20:06:52,493 basehttp 7439 135490912122560 "POST /api/auth/register/%20 HTTP/1.1" 404 6632
+WARNING 2025-08-31 20:07:10,019 basehttp 7439 135490912122560 "POST /api/auth/register/ HTTP/1.1" 400 70
+WARNING 2025-08-31 20:15:00,204 basehttp 7439 135490912122560 "POST /api/auth/register/ HTTP/1.1" 400 46
+WARNING 2025-08-31 20:16:25,219 basehttp 7439 135490912122560 "GET /api/activities/%20/ HTTP/1.1" 404 23
+WARNING 2025-08-31 20:17:25,215 basehttp 7439 135490912122560 "POST /api/activities/ HTTP/1.1" 400 82
+WARNING 2025-08-31 20:17:42,738 basehttp 7439 135490912122560 "POST /api/activities/ HTTP/1.1" 400 109
+WARNING 2025-08-31 20:18:52,590 basehttp 7439 135490912122560 "GET /api/activities/%20/ HTTP/1.1" 404 23
+WARNING 2025-08-31 20:18:54,739 basehttp 7439 135490912122560 "GET /api/activities/%20/ HTTP/1.1" 404 23
+WARNING 2025-08-31 20:19:20,804 basehttp 7439 135490912122560 "DELETE /api/activities/10/%20 HTTP/1.1" 404 5700

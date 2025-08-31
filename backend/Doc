@@ -60,3 +60,17 @@ python manage.py runserver 0.0.0.0:8080
 
 result  "id":2,"type":"running","duration":30,"calories":250,"distance":5.2,"date":"2025-08-29","notes":"Evening run around the park","created_at":"2025-08-29T20:30:00.103649Z","updated_at":"2025-08-29T20:30:00.103685Z","user":3
 ////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
