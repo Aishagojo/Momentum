@@ -2,7 +2,7 @@
 
 A high-performance REST API for fitness activity tracking, built with Django REST Framework. Provides full CRUD operations with JWT authentication.
 
-## 🚀 Features
+##  Features
 
 - **JWT Authentication** - Secure token-based auth system
 - **Activity Management** - Complete CRUD for fitness activities
@@ -10,7 +10,7 @@ A high-performance REST API for fitness activity tracking, built with Django RES
 - **MySQL Database** - Scalable data storage
 - **CORS Support** - Ready for frontend integration
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.9+
