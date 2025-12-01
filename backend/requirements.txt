@@ -1,1 +1,6 @@
 gunicorn
+django
+djangorestframework
+drf-yasg
+django-cors-headers
+python-dotenv
