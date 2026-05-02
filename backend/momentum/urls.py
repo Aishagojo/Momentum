@@ -47,6 +47,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('custom_auth.urls')),
     path('api/', include('api.urls')),
+    path('api/activities/', include('activities.urls')),
     path('', api_documentation, name='api-documentation'),
 ]
 

@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 venv/
+.venv/
+backend/.venv/
 *.db
 
 # Node
@@ -13,5 +15,4 @@ dist/
 .env.*
 backend/.env
 doc
-
 

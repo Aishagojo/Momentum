@@ -5,8 +5,17 @@ from .models import CustomUser
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'date_joined')
-        read_only_fields = ('date_joined',)
+        fields = (
+            'id',
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'date_of_birth',
+            'fitness_level',
+            'date_joined',
+        )
+        read_only_fields = ('id', 'date_joined')
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -14,11 +23,24 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ('username', 'email', 'password', 'password_confirm', 'first_name', 'last_name')
+        fields = (
+            'username',
+            'email',
+            'password',
+            'password_confirm',
+            'first_name',
+            'last_name',
+            'date_of_birth',
+            'fitness_level',
+        )
+        extra_kwargs = {
+            'password': {'write_only': True, 'min_length': 8},
+            'email': {'required': True},
+        }
 
     def validate(self, data):
         if data['password'] != data['password_confirm']:
-            raise serializers.ValidationError("Passwords don't match")
+            raise serializers.ValidationError({"password_confirm": "Passwords do not match."})
         return data
 
     def create(self, validated_data):
