@@ -221,17 +221,8 @@ USE_SQLITE=True python manage.py test
 python manage.py collectstatic
 ```
 
-## Deployment Notes
+g
 
-Before deploying:
-
-- Set `DJANGO_DEBUG=False`
-- Replace the development `DJANGO_SECRET_KEY`
-- Configure production `ALLOWED_HOSTS`
-- Use a production database such as MySQL
-- Run `python manage.py collectstatic`
-- Serve the app with a production WSGI server such as Gunicorn
-- Configure HTTPS and secure cookies
 
 ## Author
 
