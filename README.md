@@ -221,7 +221,6 @@ USE_SQLITE=True python manage.py test
 python manage.py collectstatic
 ```
 
-g
 
 
 ## Author
